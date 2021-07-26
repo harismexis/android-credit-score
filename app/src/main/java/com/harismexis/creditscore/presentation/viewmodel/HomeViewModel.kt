@@ -5,6 +5,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.harismexis.creditscore.core.domain.CreditReport
 import com.harismexis.creditscore.core.repository.CreditRepository
 import com.harismexis.creditscore.core.result.CreditResult
 import com.harismexis.creditscore.framework.event.Event
@@ -38,11 +39,14 @@ class HomeViewModel @Inject constructor(
         viewModelScope.launch {
             mCanRefresh.value = false
 
-            // fetch and save CreditReport
+            var report: CreditReport? = null
+
+            // fetch, emit & save CreditReport
             try {
-                val credit = repository.getRemoteCreditReport()
-                credit?.let {
-                    repository.save(credit)
+                report = repository.getRemoteCreditReport()
+                report?.let {
+                    mCredit.value = CreditResult.Success(it)
+                    repository.save(it)
                 }
             } catch (e: Exception) {
                 val errMsg = e.msg()
@@ -51,17 +55,20 @@ class HomeViewModel @Inject constructor(
                 mShowSnack.value = Event(errMsg)
             }
 
-            // retrieve latest cached CreditReport
-            try {
-                val localReport = repository.getLocalCreditReport()
-                if (localReport != null) {
-                    mCredit.value = CreditResult.Success(localReport)
-                } else {
-                    mCredit.value = CreditResult.Error(Exception("Failed to retrieve CreditScore"))
+            // if get remote failed fetched latest cached
+            if (report == null) {
+                try {
+                    report = repository.getLocalCreditReport()
+                    if (report != null) {
+                        mCredit.value = CreditResult.Success(report)
+                    } else {
+                        mCredit.value =
+                            CreditResult.Error(Exception("Failed to retrieve CreditScore"))
+                    }
+                } catch (ex: Exception) {
+                    Log.d(TAG, ex.msg())
+                    mCredit.value = CreditResult.Error(ex)
                 }
-            } catch (ex: Exception) {
-                Log.d(TAG, ex.msg())
-                mCredit.value = CreditResult.Error(ex)
             }
 
             mCanRefresh.value = true

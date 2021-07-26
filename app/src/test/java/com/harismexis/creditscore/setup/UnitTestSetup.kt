@@ -1,7 +1,6 @@
 package com.harismexis.creditscore.setup
 
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
-import com.harismexis.creditscore.base.BaseTestSetup
 import com.harismexis.creditscore.parser.MockCreditResponseProvider
 import org.junit.After
 import org.junit.Assert
@@ -9,12 +8,12 @@ import org.junit.Before
 import org.junit.Rule
 import org.mockito.MockitoAnnotations
 
-abstract class UnitTestSetup : BaseTestSetup() {
+abstract class UnitTestSetup {
+
+    protected val mockProvider = MockCreditResponseProvider(UnitTestFileReader())
 
     @get:Rule
     val instantTaskExecutorRule = InstantTaskExecutorRule()
-
-    protected val mockProvider = MockCreditResponseProvider(UnitTestFileReader())
 
     private var closeable: AutoCloseable? = null
 

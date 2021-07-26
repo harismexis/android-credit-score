@@ -4,11 +4,10 @@ import android.content.Context
 import androidx.room.Room
 import androidx.test.core.app.ApplicationProvider
 import androidx.test.ext.junit.runners.AndroidJUnit4
-import com.harismexis.creditscore.setup.util.InstrumentedFileReader
 import com.harismexis.creditscore.framework.data.local.dao.CreditInfoLocalDao
 import com.harismexis.creditscore.framework.data.local.schema.CreditInfoDatabase
 import com.harismexis.creditscore.framework.extensions.toLocalItem
-import com.harismexis.creditscore.parser.MockCreditResponseProvider
+import com.harismexis.creditscore.setup.InstrumentedTestSetup
 import kotlinx.coroutines.runBlocking
 import org.junit.After
 import org.junit.Assert
@@ -18,9 +17,7 @@ import org.junit.runner.RunWith
 import java.io.IOException
 
 @RunWith(AndroidJUnit4::class)
-class CreditInfoLocalDaoTest {
-
-    private val mockProvider = MockCreditResponseProvider(InstrumentedFileReader())
+class CreditInfoLocalDaoTest: InstrumentedTestSetup() {
 
     private lateinit var dao: CreditInfoLocalDao
     private lateinit var database: CreditInfoDatabase
