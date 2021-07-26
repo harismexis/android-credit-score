@@ -1,0 +1,7 @@
+ext {
+
+    common = [
+            CREDIT_API_BASE_URL : '\"' + "https://android-interview.s3.eu-west-2.amazonaws.com/" + '\"'
+    ]
+
+}

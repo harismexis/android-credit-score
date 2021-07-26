@@ -1,0 +1,14 @@
+{
+  "accountIDVStatus": "PASS",
+
+  "dashboardStatus": "PASS",
+  "personaType": "INEXPERIENCED",
+  "coachingSummary": {
+    "activeTodo": false,
+    "activeChat": true,
+    "numberOfTodoItems": 0,
+    "numberOfCompletedTodoItems": 0,
+    "selected": true
+  },
+  "augmentedCreditScore": null
+}
