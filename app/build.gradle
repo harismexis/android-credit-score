@@ -40,6 +40,9 @@ android {
 
     testOptions {
         unitTests.returnDefaultValues = true
+//        unitTests.all {
+//            useJUnitPlatform()
+//        }
     }
 
     sourceSets {
@@ -71,7 +74,6 @@ dependencies {
     kapt annotationProcessorsDependencies.values()
     testImplementation testLibraries.values()
     androidTestImplementation androidTestLibraries.values()
-    androidTestImplementation mockkDependencies.mockk_android
     kaptAndroidTest annotationProcessorsDependencies.dagger_compiler
     kaptAndroidTest  annotationProcessorsDependencies.dagger_android_processor
 }

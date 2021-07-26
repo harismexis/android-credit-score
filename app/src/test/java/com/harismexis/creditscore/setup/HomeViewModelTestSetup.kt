@@ -5,15 +5,14 @@ import com.harismexis.creditscore.core.domain.CreditReport
 import com.harismexis.creditscore.core.repository.CreditRepository
 import com.harismexis.creditscore.core.result.CreditResult
 import com.harismexis.creditscore.presentation.viewmodel.HomeViewModel
-import kotlinx.coroutines.runBlocking
-import org.mockito.Mock
-import org.mockito.Mockito.`when`
+import io.mockk.coEvery
+import io.mockk.impl.annotations.MockK
 
 open class HomeViewModelTestSetup: UnitTestSetup() {
 
-    @Mock
+    @MockK
     protected lateinit var mockRepository: CreditRepository
-    @Mock
+    @MockK
     lateinit var observer: Observer<CreditResult>
     protected  lateinit var subject: HomeViewModel
 
@@ -23,27 +22,19 @@ open class HomeViewModelTestSetup: UnitTestSetup() {
     }
 
     protected fun mockRemoteCall(mockCreditReport: CreditReport) {
-        runBlocking {
-        `when`(mockRepository.getRemoteCreditReport()).thenReturn(mockCreditReport)
-        }
+        coEvery { mockRepository.getRemoteCreditReport() }.returns(mockCreditReport)
     }
 
     protected fun mockRemoteCall(e: Exception) {
-        runBlocking {
-            `when`(mockRepository.getRemoteCreditReport()).thenThrow(e)
-        }
+        coEvery { mockRepository.getRemoteCreditReport() }.throws(e)
     }
 
     protected fun mockLocalCall(mockCreditReport: CreditReport) {
-        runBlocking {
-            `when`(mockRepository.getLocalCreditReport()).thenReturn(mockCreditReport)
-        }
+        coEvery { mockRepository.getLocalCreditReport() }.returns(mockCreditReport)
     }
 
     protected fun mockLocalCall(e: Exception) {
-        runBlocking {
-            `when`(mockRepository.getLocalCreditReport()).thenThrow(e)
-        }
+        coEvery { mockRepository.getLocalCreditReport() }.throws(e)
     }
 
 }

@@ -4,18 +4,16 @@ import com.harismexis.creditscore.core.datasource.CreditBaseLocalDataSource
 import com.harismexis.creditscore.core.datasource.CreditBaseRemoteDataSource
 import com.harismexis.creditscore.core.domain.CreditReport
 import com.harismexis.creditscore.core.repository.CreditRepository
-import kotlinx.coroutines.runBlocking
-import org.mockito.Mock
-import org.mockito.Mockito
-import org.mockito.Mockito.`when`
-import org.mockito.kotlin.verify
+import io.mockk.coEvery
+import io.mockk.coVerify
+import io.mockk.impl.annotations.MockK
 
 open class CreditRepositoryTestSetup : UnitTestSetup() {
 
-    @Mock
+    @MockK
     protected lateinit var mockRemote: CreditBaseRemoteDataSource
 
-    @Mock
+    @MockK
     protected lateinit var mockLocal: CreditBaseLocalDataSource
 
     protected lateinit var subject: CreditRepository
@@ -25,39 +23,27 @@ open class CreditRepositoryTestSetup : UnitTestSetup() {
     }
 
     protected fun mockRemoteCreditCall(mock: CreditReport?) {
-        runBlocking {
-            `when`(mockRemote.getCreditReport()).thenReturn(mock)
-        }
+        coEvery { mockRemote.getCreditReport() }.returns(mock)
     }
 
     protected fun mockRemoteCreditCall(e: Exception) {
-        runBlocking {
-            `when`(mockRemote.getCreditReport()).thenThrow(e)
-        }
+        coEvery { mockRemote.getCreditReport() }.throws(e)
     }
 
     protected fun mockLocalCreditCall(mock: CreditReport?) {
-        runBlocking {
-            `when`(mockLocal.getCreditReport()).thenReturn(mock)
-        }
+        coEvery { mockLocal.getCreditReport() }.returns(mock)
     }
 
     protected fun mockLocalCreditCall(e: Exception) {
-        runBlocking {
-            `when`(mockLocal.getCreditReport()).thenThrow(e)
-        }
+        coEvery { mockLocal.getCreditReport() }.throws(e)
     }
 
     protected fun verifyRemoteCreditCallDone() {
-        runBlocking {
-            verify(mockRemote, Mockito.times(1)).getCreditReport()
-        }
+        coVerify { mockRemote.getCreditReport() }
     }
 
     protected fun verifyLocalCreditCallDone() {
-        runBlocking {
-            verify(mockLocal, Mockito.times(1)).getCreditReport()
-        }
+        coVerify { mockLocal.getCreditReport() }
     }
 
 }

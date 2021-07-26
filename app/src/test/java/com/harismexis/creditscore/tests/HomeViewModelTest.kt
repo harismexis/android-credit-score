@@ -2,13 +2,12 @@ package com.harismexis.creditscore.tests
 
 import com.harismexis.creditscore.core.result.CreditResult
 import com.harismexis.creditscore.setup.HomeViewModelTestSetup
-import kotlinx.coroutines.runBlocking
+import io.mockk.coVerify
+import io.mockk.verify
 import org.junit.Before
 import org.junit.Test
 import org.junit.runner.RunWith
 import org.junit.runners.JUnit4
-import org.mockito.Mockito.times
-import org.mockito.kotlin.verify
 
 @RunWith(JUnit4::class)
 class HomeViewModelTest : HomeViewModelTestSetup() {
@@ -30,7 +29,7 @@ class HomeViewModelTest : HomeViewModelTestSetup() {
 
         // then
         verifyCreditCallDone()
-        verify(observer).onChanged(CreditResult.Success(mockCredit))
+        verify { observer.onChanged(CreditResult.Success(mockCredit)) }
     }
 
     @Test
@@ -46,7 +45,7 @@ class HomeViewModelTest : HomeViewModelTestSetup() {
 
         // then
         verifyCreditCallDone()
-        verify(observer).onChanged(CreditResult.Success(mockCredit))
+        verify { observer.onChanged(CreditResult.Success(mockCredit)) }
     }
 
     @Test
@@ -62,11 +61,10 @@ class HomeViewModelTest : HomeViewModelTestSetup() {
 
         // then
         verifyCreditCallDone()
-        verify(observer, times(1)).onChanged(CreditResult.Error(error))
+        verify{ observer.onChanged(CreditResult.Error(error)) }
     }
 
-    private fun verifyCreditCallDone() = runBlocking {
-            verify(mockRepository, times(1)).getRemoteCreditReport()
-        }
-
+    private fun verifyCreditCallDone() = coVerify {
+        mockRepository.getRemoteCreditReport()
+    }
 }

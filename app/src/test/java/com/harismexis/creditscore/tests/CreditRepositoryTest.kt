@@ -2,14 +2,13 @@ package com.harismexis.creditscore.tests
 
 import com.harismexis.creditscore.framework.extensions.toCreditReport
 import com.harismexis.creditscore.setup.CreditRepositoryTestSetup
+import io.mockk.coVerify
 import kotlinx.coroutines.runBlocking
 import org.junit.Assert.assertEquals
 import org.junit.Before
 import org.junit.Test
 import org.junit.runner.RunWith
 import org.junit.runners.JUnit4
-import org.mockito.Mockito
-import org.mockito.kotlin.verify
 
 @RunWith(JUnit4::class)
 class CreditRepositoryTest : CreditRepositoryTestSetup() {
@@ -44,7 +43,6 @@ class CreditRepositoryTest : CreditRepositoryTestSetup() {
         // when
         assertThrowsIllegalStateEx(errMsg) {
             runBlocking {
-                //mockRemote.getCreditReport()
                 subject.getRemoteCreditReport()
             }
         }
@@ -97,9 +95,7 @@ class CreditRepositoryTest : CreditRepositoryTestSetup() {
         }
 
         // then
-        runBlocking {
-            verify(mockLocal, Mockito.times(1)).save(mock)
-        }
+        coVerify { mockLocal.save(mock) }
     }
 
 }

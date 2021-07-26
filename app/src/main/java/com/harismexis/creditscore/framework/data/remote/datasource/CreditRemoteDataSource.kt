@@ -5,7 +5,9 @@ import com.harismexis.creditscore.core.domain.CreditReport
 import com.harismexis.creditscore.framework.data.remote.api.CreditApi
 import com.harismexis.creditscore.framework.extensions.toCreditReport
 import javax.inject.Inject
+import javax.inject.Singleton
 
+@Singleton
 class CreditRemoteDataSource @Inject constructor(
     private val api: CreditApi
 ) : CreditBaseRemoteDataSource {

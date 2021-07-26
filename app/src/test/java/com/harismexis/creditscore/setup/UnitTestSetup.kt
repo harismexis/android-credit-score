@@ -2,11 +2,11 @@ package com.harismexis.creditscore.setup
 
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import com.harismexis.creditscore.parser.MockCreditResponseProvider
-import org.junit.After
-import org.junit.Assert
+import io.kotest.assertions.throwables.shouldThrow
+import io.kotest.matchers.shouldBe
+import io.mockk.MockKAnnotations
 import org.junit.Before
 import org.junit.Rule
-import org.mockito.MockitoAnnotations
 
 abstract class UnitTestSetup {
 
@@ -15,26 +15,16 @@ abstract class UnitTestSetup {
     @get:Rule
     val instantTaskExecutorRule = InstantTaskExecutorRule()
 
-    private var closeable: AutoCloseable? = null
-
     @Before
-    open fun openMocks() {
-        closeable = MockitoAnnotations.openMocks(this)
-    }
+    fun setUp() = MockKAnnotations.init(this, relaxUnitFun = true)
 
-    @After
-    @Throws(Exception::class)
-    open fun releaseMocks() {
-        closeable?.close()
-    }
-
-    protected fun assertThrowsIllegalStateEx(
+    fun assertThrowsIllegalStateEx(
         expectedError: String,
         call: () -> Unit) {
-        val expectedException = Assert.assertThrows(IllegalStateException::class.java) {
+        val exception = shouldThrow<IllegalStateException> {
             call.invoke()
         }
-        Assert.assertEquals(expectedError, expectedException.message)
+        exception.message shouldBe expectedError
     }
 
 }
