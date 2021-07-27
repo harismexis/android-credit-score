@@ -41,9 +41,8 @@ class HomeActivityTest: InstrumentedTestSetup() {
         val mockCreditScore = mockProvider.getMockCreditReport()
         val expectedScore = mockCreditScore.score
         val expectedMaxScore = mockCreditScore.maxScoreValue
-
-        val expectedHeader = getString(R.string.credit_score_header)
-        val expectedFooter = getStringFormatted(R.string.credit_score_footer,
+        val expectedHeader = getString(R.string.score_header)
+        val expectedFooter = getStringFormatted(R.string.score_footer,
             expectedMaxScore.toString())
 
         every { mockVm.getCreditReport() } answers {
@@ -73,9 +72,9 @@ class HomeActivityTest: InstrumentedTestSetup() {
     @Test
     fun viewModelEmitsError_uiShowsExpectedData() {
         // given
-        val expectedHeader = getString(R.string.credit_score_header)
+        val expectedHeader = getString(R.string.score_header)
         val expectedScore = getString(R.string.question_mark)
-        val expectedFooter = getStringFormatted(R.string.credit_score_footer,
+        val expectedFooter = getStringFormatted(R.string.score_footer,
             getString(R.string.question_mark)
         )
 
@@ -83,6 +82,7 @@ class HomeActivityTest: InstrumentedTestSetup() {
             mockCreditResult.value = CreditResult.Error(Exception())
         }
 
+        // when
         val scenario = launchActivityUnderTest()
 
         // then

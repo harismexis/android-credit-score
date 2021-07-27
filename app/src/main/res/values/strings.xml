@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">Credit Score</string>
     <string name="toolbar_title">Credit Score</string>
-    <string name="credit_score_header">Your credit score is</string>
-    <string name="credit_score_footer">out of %1$s</string>
+    <string name="score_header">Your credit score is</string>
+    <string name="score_footer">out of %1$s</string>
     <string name="question_mark">\?</string>
 </resources>

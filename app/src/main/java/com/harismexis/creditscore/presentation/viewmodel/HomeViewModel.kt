@@ -23,9 +23,9 @@ class HomeViewModel @Inject constructor(
     val credit: LiveData<CreditResult>
         get() = mCredit
 
-    private val mShowSnack = MutableLiveData<Event<String>>()
-    val showSnack: LiveData<Event<String>>
-        get() = mShowSnack
+    private val mShowSnackBar = MutableLiveData<Event<String>>()
+    val showSnackBar: LiveData<Event<String>>
+        get() = mShowSnackBar
 
     private val mCanRefresh = MutableLiveData<Boolean>()
     val canRefresh: LiveData<Boolean>
@@ -39,7 +39,7 @@ class HomeViewModel @Inject constructor(
         viewModelScope.launch {
             mCanRefresh.value = false
 
-            var report: CreditReport? = null
+            var report: CreditReport?
 
             // fetch, emit & save CreditReport
             try {
@@ -51,8 +51,9 @@ class HomeViewModel @Inject constructor(
             } catch (e: Exception) {
                 val errMsg = e.msg()
                 Log.d(TAG, errMsg)
+                report = null
                 // show error that update failed
-                mShowSnack.value = Event(errMsg)
+                mShowSnackBar.value = Event(errMsg)
             }
 
             // if get remote failed fetched latest cached

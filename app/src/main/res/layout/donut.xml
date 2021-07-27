@@ -42,7 +42,7 @@
         <TextView
             android:id="@+id/txtHeader"
             style="@style/BaseTextView"
-            android:text="@string/credit_score_header" />
+            android:text="@string/score_header" />
 
         <TextView
             android:id="@+id/txtCreditScore"

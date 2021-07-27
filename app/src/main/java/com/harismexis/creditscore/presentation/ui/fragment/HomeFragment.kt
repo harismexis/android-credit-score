@@ -60,7 +60,7 @@ class HomeFragment : BaseFragment() {
         viewModel.canRefresh.observe(viewLifecycleOwner, {
             binding?.homeSwipeRefresh?.isEnabled = it
         })
-        viewModel.showSnack.observe(viewLifecycleOwner, EventObserver { errorMsg ->
+        viewModel.showSnackBar.observe(viewLifecycleOwner, EventObserver { errorMsg ->
             showSnackBar(errorMsg)
         })
     }
@@ -70,7 +70,7 @@ class HomeFragment : BaseFragment() {
         donut?.let {
             it.scoreProgressBar.max = uiModel.maxScoreValue
             it.txtFooter.text = getString(
-                R.string.credit_score_footer,
+                R.string.score_footer,
                 uiModel.maxScoreValue.toString()
             )
             animateScore(uiModel.score)
@@ -85,7 +85,7 @@ class HomeFragment : BaseFragment() {
             it.scoreProgressBar.max = 0
             it.txtCreditScore.text = questionMark
             it.txtFooter.text = getString(
-                R.string.credit_score_footer,
+                R.string.score_footer,
                 questionMark
             )
         }
