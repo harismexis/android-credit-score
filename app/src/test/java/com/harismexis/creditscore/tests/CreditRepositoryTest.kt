@@ -14,7 +14,7 @@ import org.junit.runners.JUnit4
 class CreditRepositoryTest : CreditRepositoryTestSetup() {
 
     @Before
-    fun setup() {
+    fun doBefore() {
         setupClassUnderTest()
     }
 

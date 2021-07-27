@@ -24,7 +24,7 @@ class CreditLocalDataSourceTest : UnitTestSetup() {
     private lateinit var subject: CreditLocalDataSource
 
     @Before
-    fun initialiseClassUnderTest() {
+    fun doBefore() {
         subject = CreditLocalDataSource(mockDao)
     }
 

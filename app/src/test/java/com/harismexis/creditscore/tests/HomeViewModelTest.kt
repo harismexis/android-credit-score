@@ -13,7 +13,7 @@ import org.junit.runners.JUnit4
 class HomeViewModelTest : HomeViewModelTestSetup() {
 
     @Before
-    fun setup() {
+    fun doBefore() {
         setupClassUnderTest()
     }
 
@@ -21,8 +21,8 @@ class HomeViewModelTest : HomeViewModelTestSetup() {
     fun creditCallReturnsData_liveDataUpdated() {
         // given
         val mockCredit = mockProvider.getMockCreditReport()
-        mockRemoteCall(mockCredit)
-        mockLocalCall(mockCredit)
+        mockRemoteCreditCall(mockCredit)
+        mockLocalCreditCall(mockCredit)
 
         // when
         subject.getCreditReport()
@@ -37,8 +37,8 @@ class HomeViewModelTest : HomeViewModelTestSetup() {
         // given
         val mockCredit = mockProvider.getMockCreditReport()
         val error = IllegalStateException("Error getting remote credit report")
-        mockRemoteCall(error)
-        mockLocalCall(mockCredit)
+        mockRemoteCreditCall(error)
+        mockLocalCreditCall(mockCredit)
 
         // when
         subject.getCreditReport()
@@ -52,9 +52,9 @@ class HomeViewModelTest : HomeViewModelTestSetup() {
     fun creditCallThrowsError_liveDataUpdatedIfNoCache() {
         // given
         val error1 = IllegalStateException("Error")
-        mockRemoteCall(error1)
+        mockRemoteCreditCall(error1)
         val error = IllegalStateException("Error")
-        mockLocalCall(error)
+        mockLocalCreditCall(error)
 
         // when
         subject.getCreditReport()

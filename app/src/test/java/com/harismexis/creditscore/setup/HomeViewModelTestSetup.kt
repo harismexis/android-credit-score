@@ -21,19 +21,19 @@ open class HomeViewModelTestSetup: UnitTestSetup() {
         subject.credit.observeForever(observer)
     }
 
-    protected fun mockRemoteCall(mockCreditReport: CreditReport) {
+    protected fun mockRemoteCreditCall(mockCreditReport: CreditReport) {
         coEvery { mockRepository.getRemoteCreditReport() }.returns(mockCreditReport)
     }
 
-    protected fun mockRemoteCall(e: Exception) {
+    protected fun mockRemoteCreditCall(e: Exception) {
         coEvery { mockRepository.getRemoteCreditReport() }.throws(e)
     }
 
-    protected fun mockLocalCall(mockCreditReport: CreditReport) {
+    protected fun mockLocalCreditCall(mockCreditReport: CreditReport) {
         coEvery { mockRepository.getLocalCreditReport() }.returns(mockCreditReport)
     }
 
-    protected fun mockLocalCall(e: Exception) {
+    protected fun mockLocalCreditCall(e: Exception) {
         coEvery { mockRepository.getLocalCreditReport() }.throws(e)
     }
 
