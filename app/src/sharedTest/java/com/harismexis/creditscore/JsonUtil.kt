@@ -1,4 +1,4 @@
-package com.harismexis.creditscore.parser
+package com.harismexis.creditscore
 
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder

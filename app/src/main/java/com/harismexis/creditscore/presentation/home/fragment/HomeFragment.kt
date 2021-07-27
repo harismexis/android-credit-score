@@ -66,7 +66,7 @@ class HomeFragment : BaseFragment() {
     }
 
     private fun populate(uiModel: CreditReport) {
-        stopLoading()
+        hideLoadingViews()
         donut?.let {
             it.scoreProgressBar.max = uiModel.maxScoreValue
             it.txtFooter.text = getString(
@@ -78,7 +78,7 @@ class HomeFragment : BaseFragment() {
     }
 
     private fun populateError(e: Exception) {
-        stopLoading()
+        hideLoadingViews()
         val questionMark = getString(R.string.question_mark)
         donut?.let {
             it.scoreProgressBar.progress = 0
@@ -91,7 +91,7 @@ class HomeFragment : BaseFragment() {
         }
     }
 
-    private fun stopLoading() {
+    private fun hideLoadingViews() {
         binding?.homeSwipeRefresh?.isRefreshing = false
         binding?.loadingProgressBar?.visibility = View.GONE
     }

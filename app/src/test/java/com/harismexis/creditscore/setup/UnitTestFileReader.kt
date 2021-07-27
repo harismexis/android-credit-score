@@ -1,6 +1,6 @@
 package com.harismexis.creditscore.setup
 
-import com.harismexis.creditscore.parser.BaseFileReader
+import com.harismexis.creditscore.BaseFileReader
 
 class UnitTestFileReader : BaseFileReader() {
 

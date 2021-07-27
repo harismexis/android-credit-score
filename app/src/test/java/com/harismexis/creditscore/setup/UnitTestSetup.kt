@@ -1,7 +1,7 @@
 package com.harismexis.creditscore.setup
 
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
-import com.harismexis.creditscore.parser.MockCreditResponseProvider
+import com.harismexis.creditscore.MockCreditResponseProvider
 import io.kotest.assertions.throwables.shouldThrow
 import io.kotest.matchers.shouldBe
 import io.mockk.MockKAnnotations

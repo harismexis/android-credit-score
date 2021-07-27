@@ -1,4 +1,4 @@
-package com.harismexis.creditscore.parser
+package com.harismexis.creditscore
 
 import com.harismexis.creditscore.core.domain.CreditReport
 import com.harismexis.creditscore.framework.data.remote.model.CreditResponse

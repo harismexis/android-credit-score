@@ -1,4 +1,4 @@
-package com.harismexis.creditscore.parser
+package com.harismexis.creditscore
 
 abstract class BaseFileReader {
 

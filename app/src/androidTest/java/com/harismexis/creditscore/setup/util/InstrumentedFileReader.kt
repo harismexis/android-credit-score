@@ -1,7 +1,7 @@
 package com.harismexis.creditscore.setup.util
 
 import androidx.test.platform.app.InstrumentationRegistry
-import com.harismexis.creditscore.parser.BaseFileReader
+import com.harismexis.creditscore.BaseFileReader
 
 class InstrumentedFileReader: BaseFileReader() {
 
