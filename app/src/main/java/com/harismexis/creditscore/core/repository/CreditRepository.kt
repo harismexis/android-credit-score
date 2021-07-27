@@ -7,8 +7,8 @@ import javax.inject.Singleton
 
 @Singleton
 class CreditRepository(
-    val remote: CreditBaseRemoteDataSource,
-    val local: CreditBaseLocalDataSource,
+    private val remote: CreditBaseRemoteDataSource,
+    private val local: CreditBaseLocalDataSource,
 ) {
 
     suspend fun getRemoteCreditReport(): CreditReport? = remote.getCreditReport()

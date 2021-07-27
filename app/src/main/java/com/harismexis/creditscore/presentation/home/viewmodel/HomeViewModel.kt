@@ -14,7 +14,7 @@ import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 class HomeViewModel @Inject constructor(
-    private var repository: CreditRepository,
+    private val repository: CreditRepository,
 ) : ViewModel() {
 
     private val TAG = HomeViewModel::class.qualifiedName
