@@ -5,13 +5,15 @@ import android.view.WindowManager
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.WindowInsetsControllerCompat
 import com.harismexis.creditscore.R
+import com.harismexis.creditscore.databinding.ActivityHomeBinding
 import com.harismexis.creditscore.framework.extensions.getColorCompat
 
 class HomeActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_home)
+        val binding = ActivityHomeBinding.inflate(layoutInflater)
+        setContentView(binding.root)
         renderStatusBar()
     }
 
