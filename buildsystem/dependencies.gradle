@@ -53,10 +53,6 @@ ext {
             room : "androidx.room:room-compiler:$room"
     ]
 
-    librariesDebug = [
-
-    ]
-
     testLibraries = [
             junit           : "androidx.test.ext:junit:$androidx_junit",
             coroutines_test : "org.jetbrains.kotlinx:kotlinx-coroutines-test:$coroutines_android",
@@ -71,7 +67,6 @@ ext {
             runner                 : "androidx.test:runner:$androidx_test",
             rules                  : "androidx.test:rules:$androidx_test",
             junit                  : "androidx.test.ext:junit:$androidx_junit",
-            truth                  : "androidx.test.ext:truth:$androidx_test",
             espresso_core          : "androidx.test.espresso:espresso-core:$espresso",
             coroutines_test        : "org.jetbrains.kotlinx:kotlinx-coroutines-test:$coroutines_android",
             mockk_android          : "io.mockk:mockk-android:$mockk_android"
@@ -88,4 +83,5 @@ ext {
             dagger_android_processor : "com.google.dagger:dagger-android-processor:$dagger_2"
     ]
 
+    librariesDebug = []
 }
