@@ -5,12 +5,12 @@
     android:id="@+id/home_coordinator"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/home_background"
     tools:context="com.harismexis.creditscore.presentation.home.fragment.HomeFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@color/white">
+        android:layout_height="match_parent">
 
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar"
@@ -62,9 +62,9 @@
 
                 <include
                     android:id="@+id/donutView"
+                    layout="@layout/donut"
                     android:layout_width="@dimen/donut_view_size"
-                    android:layout_height="@dimen/donut_view_size"
-                    layout="@layout/donut" />
+                    android:layout_height="@dimen/donut_view_size" />
 
             </LinearLayout>
 

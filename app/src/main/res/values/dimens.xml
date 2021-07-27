@@ -5,7 +5,7 @@
     <dimen name="toolbar_text_size">18sp</dimen>
     <dimen name="donut_view_progress_size">228dp</dimen>
     <dimen name="base_text_size">18sp</dimen>
-    <dimen name="score_text_size">24sp</dimen>
+    <dimen name="score_text_size">26sp</dimen>
     <dimen name="loading_progress_size">50dp</dimen>
 
 </resources>
