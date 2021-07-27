@@ -16,52 +16,52 @@ class CreditResponseExtensionTest : UnitTestSetup() {
     @Test
     fun responseHasAllData_modelHasExpectedData() {
         // given
-        val mockResponse = mockProvider.getMockResponse()
-        val expectedScore = mockResponse.creditReportInfo!!.score
-        val expectedMaxScore = mockResponse.creditReportInfo!!.maxScoreValue
+        val mock = mockProvider.getMockResponse()
+        val expectedScore = mock.creditReportInfo!!.score
+        val expectedMaxScore = mock.creditReportInfo!!.maxScoreValue
 
         // when
-        val model = mockResponse.toCreditReport()
+        val actual = mock.toCreditReport()
 
         // then
-        Assert.assertNotNull(model.score)
-        Assert.assertEquals(expectedScore, model.score)
-        Assert.assertEquals(expectedMaxScore, model.maxScoreValue)
+        Assert.assertNotNull(actual.score)
+        Assert.assertEquals(expectedScore, actual.score)
+        Assert.assertEquals(expectedMaxScore, actual.maxScoreValue)
     }
 
     @Test
-    fun responseHasNoScore_conversionToUiModelThrowsException() {
+    fun responseHasNoScore_convertToModelThrowsExpected() {
         // given
-        val response = mockProvider.getMockResponseNoScore()
+        val mock = mockProvider.getMockResponseNoScore()
 
         // then
-        assertThrowsIllegalStateEx(NULL_SCORE) { response.toCreditReport() }
+        assertThrowsIllegalStateEx(NULL_SCORE) { mock.toCreditReport() }
     }
 
     @Test
-    fun responseHasNoMaxScore_conversionToUiModelThrowsException() {
+    fun responseHasNoMaxScore_convertToModelThrowsExpected() {
         // given
-        val response = mockProvider.getMockResponseNoMaxScore()
+        val mock = mockProvider.getMockResponseNoMaxScore()
 
         // then
-        assertThrowsIllegalStateEx(NULL_MAX_SCORE) { response.toCreditReport() }
+        assertThrowsIllegalStateEx(NULL_MAX_SCORE) { mock.toCreditReport() }
     }
 
     @Test
-    fun responseHasNoCreditReportInfo_conversionToUiModelThrowsException() {
+    fun responseHasNoCreditReportInfo_convertToModelThrowsExpected() {
         // given
-        val response = mockProvider.getMockResponseNoCreditReportInfo()
+        val mock = mockProvider.getMockResponseNoCreditReportInfo()
 
         // then
-        assertThrowsIllegalStateEx(NULL_CREDIT_REPORT_INFO) { response.toCreditReport() }
+        assertThrowsIllegalStateEx(NULL_CREDIT_REPORT_INFO) { mock.toCreditReport() }
     }
 
     @Test
-    fun responseIsEmptyJson_conversionToUiModelThrowsException() {
+    fun responseIsEmptyJson_convertToModelThrowsExpected() {
         // given
-        val response = mockProvider.getMockResponseEmptyJson()
+        val mock = mockProvider.getMockResponseEmptyJson()
 
         // then
-        assertThrowsIllegalStateEx(NULL_CREDIT_REPORT_INFO) { response.toCreditReport() }
+        assertThrowsIllegalStateEx(NULL_CREDIT_REPORT_INFO) { mock.toCreditReport() }
     }
 }
