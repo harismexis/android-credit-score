@@ -13,14 +13,14 @@ import dagger.Provides
 class DatasourceModule {
 
     @Provides
-    fun provideBaseCreditRemoteDataSource(
+    fun provideCreditBaseRemoteDataSource(
         api: CreditApi,
     ): CreditBaseRemoteDataSource {
         return CreditRemoteDataSource(api)
     }
 
     @Provides
-    fun provideBaseCreditLocalDataSource(
+    fun provideCreditBaseLocalDataSource(
         dao: CreditInfoLocalDao
     ): CreditBaseLocalDataSource {
         return CreditLocalDataSource(dao)
