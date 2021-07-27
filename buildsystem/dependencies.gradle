@@ -29,7 +29,6 @@ ext {
     def arch_core = '2.1.0'
     def work = '2.6.0-beta02'
     def truth = '1.0'
-    def mockito = '3.11.2'
     def mockk = '1.12.0'
     def mockk_android = '1.9.3'
     def kotest_assertions_core = '4.6.1'
@@ -88,8 +87,6 @@ ext {
             arch_core              : "androidx.arch.core:core-testing:$arch_core",
             work_testing           : "androidx.work:work-testing:$work",
             coroutines_test        : "org.jetbrains.kotlinx:kotlinx-coroutines-test:$coroutines_android",
-            mockito_android        : "org.mockito:mockito-android:$mockito",
-            mockito_core           : "org.mockito:mockito-core:$mockito",
             mockk_android          : "io.mockk:mockk-android:$mockk_android"
     ]
 
