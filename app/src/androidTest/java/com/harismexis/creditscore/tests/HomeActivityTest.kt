@@ -9,8 +9,8 @@ import androidx.test.espresso.matcher.ViewMatchers.*
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import com.harismexis.creditscore.R
 import com.harismexis.creditscore.core.result.CreditResult
-import com.harismexis.creditscore.presentation.ui.activity.HomeActivity
-import com.harismexis.creditscore.presentation.ui.fragment.HomeFragment
+import com.harismexis.creditscore.presentation.activity.HomeActivity
+import com.harismexis.creditscore.presentation.home.fragment.HomeFragment
 import com.harismexis.creditscore.setup.InstrumentedTestSetup
 import com.harismexis.creditscore.setup.util.getString
 import com.harismexis.creditscore.setup.util.getStringFormatted

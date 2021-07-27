@@ -1,4 +1,4 @@
-package com.harismexis.creditscore.presentation.ui.base
+package com.harismexis.creditscore.presentation.base
 
 import android.content.Context
 import android.os.Bundle

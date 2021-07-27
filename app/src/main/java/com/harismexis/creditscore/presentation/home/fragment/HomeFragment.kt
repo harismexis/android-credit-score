@@ -1,4 +1,4 @@
-package com.harismexis.creditscore.presentation.ui.fragment
+package com.harismexis.creditscore.presentation.home.fragment
 
 import android.view.LayoutInflater
 import android.view.View
@@ -12,8 +12,8 @@ import com.harismexis.creditscore.databinding.DonutBinding
 import com.harismexis.creditscore.databinding.FragmentHomeBinding
 import com.harismexis.creditscore.framework.animation.ProgressBarAnimation
 import com.harismexis.creditscore.framework.event.EventObserver
-import com.harismexis.creditscore.presentation.ui.base.BaseFragment
-import com.harismexis.creditscore.presentation.viewmodel.HomeViewModel
+import com.harismexis.creditscore.presentation.base.BaseFragment
+import com.harismexis.creditscore.presentation.home.viewmodel.HomeViewModel
 import java.lang.ref.WeakReference
 
 class HomeFragment : BaseFragment() {

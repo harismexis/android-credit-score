@@ -6,7 +6,7 @@ import androidx.room.PrimaryKey
 
 @Entity(tableName = "credit_report_table")
 data class LocalCreditReport(
-    @PrimaryKey(autoGenerate = false) @ColumnInfo(name = "id") val id: Long,
+    @PrimaryKey(autoGenerate = false) @ColumnInfo(name = "id") val id: Int,
     @ColumnInfo(name = "score") val score: Int,
     @ColumnInfo(name = "maxScoreValue") val maxScoreValue: Int,
 )

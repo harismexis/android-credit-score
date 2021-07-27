@@ -1,7 +1,7 @@
 package com.harismexis.creditscore.framework.di.module
 
-import com.harismexis.creditscore.presentation.ui.base.BaseFragment
-import com.harismexis.creditscore.presentation.ui.fragment.HomeFragment
+import com.harismexis.creditscore.presentation.base.BaseFragment
+import com.harismexis.creditscore.presentation.home.fragment.HomeFragment
 import dagger.Module
 import dagger.android.ContributesAndroidInjector
 

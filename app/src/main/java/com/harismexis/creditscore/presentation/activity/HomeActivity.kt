@@ -1,4 +1,4 @@
-package com.harismexis.creditscore.presentation.ui.activity
+package com.harismexis.creditscore.presentation.activity
 
 import android.os.Bundle
 import android.view.WindowManager
@@ -8,7 +8,7 @@ import androidx.core.view.WindowInsetsControllerCompat
 import androidx.fragment.app.add
 import androidx.fragment.app.commit
 import com.harismexis.creditscore.R
-import com.harismexis.creditscore.presentation.ui.fragment.HomeFragment
+import com.harismexis.creditscore.presentation.home.fragment.HomeFragment
 
 class HomeActivity : AppCompatActivity() {
 

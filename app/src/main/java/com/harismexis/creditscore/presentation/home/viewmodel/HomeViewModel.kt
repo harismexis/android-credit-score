@@ -1,4 +1,4 @@
-package com.harismexis.creditscore.presentation.viewmodel
+package com.harismexis.creditscore.presentation.home.viewmodel
 
 import android.util.Log
 import androidx.lifecycle.LiveData

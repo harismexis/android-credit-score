@@ -2,7 +2,7 @@ package com.harismexis.creditscore.framework.viewmodel.factory
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import com.harismexis.creditscore.presentation.viewmodel.HomeViewModel
+import com.harismexis.creditscore.presentation.home.viewmodel.HomeViewModel
 import dagger.Binds
 import dagger.MapKey
 import dagger.Module
