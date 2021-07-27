@@ -1,8 +1,8 @@
 package com.harismexis.creditscore.setup
 
 import androidx.lifecycle.Observer
+import com.harismexis.creditscore.core.data.repository.CreditRepository
 import com.harismexis.creditscore.core.domain.CreditReport
-import com.harismexis.creditscore.core.repository.CreditRepository
 import com.harismexis.creditscore.core.result.CreditResult
 import com.harismexis.creditscore.presentation.home.viewmodel.HomeViewModel
 import io.mockk.coEvery

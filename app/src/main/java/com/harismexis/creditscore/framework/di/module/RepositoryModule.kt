@@ -1,8 +1,8 @@
 package com.harismexis.creditscore.framework.di.module
 
-import com.harismexis.creditscore.core.datasource.CreditBaseLocalDataSource
-import com.harismexis.creditscore.core.datasource.CreditBaseRemoteDataSource
-import com.harismexis.creditscore.core.repository.CreditRepository
+import com.harismexis.creditscore.core.data.datasource.CreditBaseLocalDataSource
+import com.harismexis.creditscore.core.data.datasource.CreditBaseRemoteDataSource
+import com.harismexis.creditscore.core.data.repository.CreditRepository
 import dagger.Module
 import dagger.Provides
 

@@ -1,4 +1,4 @@
-package com.harismexis.creditscore.core.datasource
+package com.harismexis.creditscore.core.data.datasource
 
 import com.harismexis.creditscore.core.domain.CreditReport
 

@@ -1,7 +1,7 @@
 package com.harismexis.creditscore.framework.di.module
 
-import com.harismexis.creditscore.core.datasource.CreditBaseLocalDataSource
-import com.harismexis.creditscore.core.datasource.CreditBaseRemoteDataSource
+import com.harismexis.creditscore.core.data.datasource.CreditBaseLocalDataSource
+import com.harismexis.creditscore.core.data.datasource.CreditBaseRemoteDataSource
 import com.harismexis.creditscore.framework.data.local.dao.CreditInfoLocalDao
 import com.harismexis.creditscore.framework.data.local.datasource.CreditLocalDataSource
 import com.harismexis.creditscore.framework.data.remote.api.CreditApi

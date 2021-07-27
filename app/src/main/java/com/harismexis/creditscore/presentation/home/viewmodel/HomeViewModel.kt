@@ -6,7 +6,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.harismexis.creditscore.core.domain.CreditReport
-import com.harismexis.creditscore.core.repository.CreditRepository
+import com.harismexis.creditscore.core.data.repository.CreditRepository
 import com.harismexis.creditscore.core.result.CreditResult
 import com.harismexis.creditscore.framework.event.Event
 import com.harismexis.creditscore.framework.extensions.msg

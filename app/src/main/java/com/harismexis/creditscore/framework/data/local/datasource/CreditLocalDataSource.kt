@@ -1,6 +1,6 @@
 package com.harismexis.creditscore.framework.data.local.datasource
 
-import com.harismexis.creditscore.core.datasource.CreditBaseLocalDataSource
+import com.harismexis.creditscore.core.data.datasource.CreditBaseLocalDataSource
 import com.harismexis.creditscore.core.domain.CreditReport
 import com.harismexis.creditscore.framework.data.local.dao.CreditInfoLocalDao
 import com.harismexis.creditscore.framework.extensions.toCreditReport

@@ -1,9 +1,9 @@
 package com.harismexis.creditscore.setup
 
-import com.harismexis.creditscore.core.datasource.CreditBaseLocalDataSource
-import com.harismexis.creditscore.core.datasource.CreditBaseRemoteDataSource
+import com.harismexis.creditscore.core.data.datasource.CreditBaseLocalDataSource
+import com.harismexis.creditscore.core.data.datasource.CreditBaseRemoteDataSource
+import com.harismexis.creditscore.core.data.repository.CreditRepository
 import com.harismexis.creditscore.core.domain.CreditReport
-import com.harismexis.creditscore.core.repository.CreditRepository
 import io.mockk.coEvery
 import io.mockk.coVerify
 import io.mockk.impl.annotations.MockK

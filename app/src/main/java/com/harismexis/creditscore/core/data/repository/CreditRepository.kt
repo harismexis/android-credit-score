@@ -1,7 +1,7 @@
-package com.harismexis.creditscore.core.repository
+package com.harismexis.creditscore.core.data.repository
 
-import com.harismexis.creditscore.core.datasource.CreditBaseLocalDataSource
-import com.harismexis.creditscore.core.datasource.CreditBaseRemoteDataSource
+import com.harismexis.creditscore.core.data.datasource.CreditBaseLocalDataSource
+import com.harismexis.creditscore.core.data.datasource.CreditBaseRemoteDataSource
 import com.harismexis.creditscore.core.domain.CreditReport
 import javax.inject.Singleton
 

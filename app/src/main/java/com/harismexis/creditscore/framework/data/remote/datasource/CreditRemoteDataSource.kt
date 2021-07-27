@@ -1,6 +1,6 @@
 package com.harismexis.creditscore.framework.data.remote.datasource
 
-import com.harismexis.creditscore.core.datasource.CreditBaseRemoteDataSource
+import com.harismexis.creditscore.core.data.datasource.CreditBaseRemoteDataSource
 import com.harismexis.creditscore.core.domain.CreditReport
 import com.harismexis.creditscore.framework.data.remote.api.CreditApi
 import com.harismexis.creditscore.framework.extensions.toCreditReport
