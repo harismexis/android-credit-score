@@ -1,8 +1,7 @@
-package com.harismexis.creditscore.setup.di.component
+package com.harismexis.creditscore.setup.di
 
 import com.harismexis.creditscore.framework.di.module.FragmentBindingsModule
 import com.harismexis.creditscore.setup.application.InstrumentedApplication
-import com.harismexis.creditscore.setup.di.module.InstrumentedApplicationModule
 import com.harismexis.creditscore.setup.viewmodel.InstrumentedViewModelModule
 import dagger.BindsInstance
 import dagger.Component
@@ -16,7 +15,6 @@ import javax.inject.Singleton
         AndroidSupportInjectionModule::class,
         FragmentBindingsModule::class,
         InstrumentedViewModelModule::class,
-        InstrumentedApplicationModule::class
     ]
 )
 interface InstrumentedComponent : AndroidInjector<InstrumentedApplication> {
