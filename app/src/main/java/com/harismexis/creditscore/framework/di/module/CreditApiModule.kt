@@ -9,16 +9,19 @@ import dagger.Provides
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
+import javax.inject.Singleton
 
 @Module
 class CreditApiModule {
 
     @Provides
+    @Singleton
     fun provideCreditApi(retrofit: Retrofit): CreditApi {
         return retrofit.create(CreditApi::class.java)
     }
 
     @Provides
+    @Singleton
     fun provideRetrofit(
         okHttpClient: OkHttpClient,
         gson: Gson
@@ -31,11 +34,13 @@ class CreditApiModule {
     }
 
     @Provides
+    @Singleton
     fun provideOkHttpClient(): OkHttpClient {
         return OkHttpClient.Builder().build()
     }
 
     @Provides
+    @Singleton
     fun provideGSON(): Gson {
         return GsonBuilder().setLenient().create()
     }

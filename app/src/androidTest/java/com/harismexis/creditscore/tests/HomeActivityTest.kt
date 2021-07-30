@@ -11,7 +11,7 @@ import com.harismexis.creditscore.R
 import com.harismexis.creditscore.core.result.CreditResult
 import com.harismexis.creditscore.presentation.activity.HomeActivity
 import com.harismexis.creditscore.presentation.home.fragment.HomeFragment
-import com.harismexis.creditscore.setup.InstrumentedTestSetup
+import com.harismexis.creditscore.setup.InstrumentedSetup
 import com.harismexis.creditscore.setup.util.getString
 import com.harismexis.creditscore.setup.util.getStringFormatted
 import com.harismexis.creditscore.setup.viewmodel.mockCreditResult
@@ -24,7 +24,7 @@ import org.junit.Test
 import org.junit.runner.RunWith
 
 @RunWith(AndroidJUnit4::class)
-class HomeActivityTest: InstrumentedTestSetup() {
+class HomeActivityTest: InstrumentedSetup() {
 
     @Before
     fun setup() {
