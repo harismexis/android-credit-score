@@ -66,6 +66,7 @@ dependencies {
     implementation fileTree(dir: "libs", include: ["*.jar"])
     implementation libraries.values()
     implementation daggerDependancies.values()
+    debugImplementation librariesDebug.values()
     kapt librariesKapt.values()
     kapt annotationProcessorsDependencies.values()
     testImplementation testLibraries.values()
